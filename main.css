@@ -1,0 +1,157 @@
+
+
+*{
+    outline: 2px dashed green;
+    margin: 0;
+    padding:0;
+}
+/* /* @media screen and (max-width: 600px) { */
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "n"
+        "h"
+        "e"
+        "s"
+        "w";
+}
+ */
+/* step one - build your grid */
+.container {
+    padding:10%;
+    /* height: 100%; */
+    display: grid;
+    grid-gap: 25px;
+    /* this will be  the same for everyone */
+    grid-template-columns: repeat(2, 1fr);
+    /* this will be customized, based on your grid, use pixels or % */
+    grid-template-rows: 80%;
+    /* use letters from step 2 to build the grid */
+    grid-template-areas: 
+        "n n"
+        "h h"
+        "e e"
+        "s w";
+}
+li{
+    font-weight: 500;
+    padding:10px;
+}
+
+.date{
+    font-weight: 300;
+}
+body{
+    font-size: 4em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+h2{
+    padding-top:30px;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+h3{
+    padding-top:15px;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.heavy{
+    padding-top:20px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h4{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+ul{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300; 
+}
+
+nav {
+    display: inline;
+    font-family: 'Merriweather', serif;
+    font-size: 35px;
+    font-weight: 300;
+    background-color:rgb(226, 242, 245);
+
+}
+
+/* step three - build a grid that becomes active when the pixels are 800px or less */
+@media screen and (max-width: 800px) {
+
+    .container{
+        display: grid;
+        grid-gap: 15px;
+        /* grid is only one column, keep this way */
+        grid-template-columns: 1fr;
+        /* you can enter values, or auto will adjust the box sizes based on content */
+        grid-template-rows: auto;
+        grid-template-areas:
+        "n"
+        "h"
+        "e"
+        "s"
+        "w";
+    }
+}
+
+/* step 1 - assign each of your sections a letter */
+blockquote {
+    grid-area: q;
+    font-weight:300;
+    padding-bottom:30px;
+}
+
+header {
+    grid-area: h;
+    padding-top: 4px;
+    font-size: large;
+}
+
+nav{
+    grid-area:n;
+}
+
+.education {
+    grid-area: e;
+}
+
+.skills {
+    grid-area: s;
+}
+
+.work{
+    grid-area: w;
+}
+
+
+
+
+
