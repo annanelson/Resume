@@ -115,7 +115,7 @@ li{
     font-size: 15px;
     font-weight: 300; 
 }
-
+/* navbar */
 nav {
     display: inline grid;
     font-family: 'Open Sans', sans-serif;
@@ -123,25 +123,29 @@ nav {
     font-weight: 300;
     background-color:rgb(226, 242, 245);
     height: 80px;
-    width: 100%;
     grid-template-columns: repeat(5, 1fr);
 }
-
-.right{
-    position: relative;
-    display:inline grid;
-    right: auto;
+.nav-links{
+    position: absolute;
+    right: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "a b c";
-    grid-gap:5px;
+    /* display:inline grid; */
+    top:35px;
+    /* grid-gap:5px; */
+}
+.right{
     border: 0px solid blue;
     color: rgb(0, 124, 130);
     font-family: 'Merriweather', serif;
     font-weight: 200;
-    top: 35px;
+    padding-left:2px;
   }
-
+  .right:hover{
+      font-weight:900;
+      color: rgb(252, 177, 26);
+  }
 .logo{
     font-size: 30px;
     font-family: 'Merriweather', serif;
@@ -149,28 +153,7 @@ nav {
     color: rgb(0, 124, 130);
     padding-left: 20px;
 }
-.footer {
-    display: inline grid;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    background-color:rgb(226, 242, 245);
-    height: 200px;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    padding: auto;
-}
-.icon-container{
-    position: absolute;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "a b c";
-    grid-gap:25px;
-    border: 0px solid blue;
-    margin: 45 20;
-    width:250px;
-  }
+
   .about{
     background-color:rgb(226, 242, 245);
     padding: 20px;
@@ -191,7 +174,34 @@ nav {
   
   }
 
-  svg{
+  /* footer */
+.footer {
+    display: inline grid;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    background-color:rgb(226, 242, 245);
+    height: 200px;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    /* padding: 5%; */
+}
+.icon-container{
+    position: absolute;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "a b c";
+    grid-gap:25px;
+    border: 0px solid blue;
+    margin: 45 20;
+    width:250px;
+  }
+  .rightfooter{
+    padding-left: 5%;
+}
+
+svg{
     fill:rgb(252, 177, 26);
   }
   svg:hover{
@@ -199,10 +209,11 @@ nav {
   }
 
 .favicon{
-    width: 200px;
+    width: 175px;
     margin: 5%;
 }
 
+/* footer title */
 .ftitle{
     /* padding-top:30px; */
     font-family: 'Merriweather', serif;
@@ -211,9 +222,21 @@ nav {
     color: rgb(0, 124, 130);
 }
 
+
+
 .footer{
-    padding: 5%;
+    grid-area:f;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "l r"
 }
+
+.rightfooter{
+    grid-area: r;
+}
+ 
 
 /* step three - build a grid that becomes active when the pixels are 800px or less */
 @media screen and (max-width: 800px) {

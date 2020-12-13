@@ -1,0 +1,307 @@
+*{
+    /* outline: 2px dashed green; */
+    margin: 0;
+    padding:0;
+}
+/* /* @media screen and (max-width: 600px) { */
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "n"
+        "h"
+        "e"
+        "s"
+        "w"
+        "f";
+}
+.margin {
+    width: 80%;
+    margin: 0 auto;
+}
+
+ */
+/* step one - build your grid */
+.container {
+    padding:10%;
+    /* height: 100%; */
+    display: grid;
+    grid-gap: 25px;
+    /* this will be  the same for everyone */
+    grid-template-columns: repeat(1fr, 1fr);
+    /* this will be customized, based on your grid, use pixels or % */
+    grid-template-rows: auto;
+    /* use letters from step 2 to build the grid */
+    grid-template-areas: 
+        "n n"
+        "h h"
+        "e e"
+        "s w"
+        "f f";
+}
+li{
+    font-weight: 300;
+    padding:10px;
+    font-size: 30;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.date{
+    font-weight: 300;
+}
+body{
+    font-size: 15;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h1{
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 40px;
+    color: rgb(0, 124, 130);
+}
+
+h2{
+    padding-top:30px;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: rgb(0, 124, 130);
+}
+
+h3{
+    padding-top:15px;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(0, 124, 130);
+}
+
+.heavy{
+    padding-top:20px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h4{
+    padding-top:10px;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgb(0, 124, 130);
+}
+
+h6{
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: rgb(0, 124, 130);
+}
+
+ul{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300; 
+}
+
+/* navbar */
+nav {
+    display: inline grid;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    background-color:rgb(226, 242, 245);
+    height: 80px;
+    grid-template-columns: repeat(5, 1fr);
+}
+.nav-links{
+    position: absolute;
+    right: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "a b c";
+    /* display:inline grid; */
+    top:35px;
+    /* grid-gap:5px; */
+}
+.right{
+    border: 0px solid blue;
+    color: rgb(0, 124, 130);
+    font-family: 'Merriweather', serif;
+    font-weight: 200;
+    padding-left:2px;
+  }
+  .right:hover{
+      font-weight:900;
+      color: rgb(252, 177, 26);
+  }
+.logo{
+    font-size: 30px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: rgb(0, 124, 130);
+    padding-left: 20px;
+}
+
+  .info{
+    background-color:rgb(226, 242, 245);
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 65px;
+    width: auto;
+  }
+/* footer */
+.footer {
+    display: inline grid;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    background-color:rgb(226, 242, 245);
+    height: 200px;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    /* padding: 5%; */
+}
+.icon-container{
+    position: absolute;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "a b c";
+    grid-gap:25px;
+    border: 0px solid blue;
+    margin: 45 20;
+    width:250px;
+  }
+  .rightfooter{
+    padding-left: 5%;
+}
+
+svg{
+    fill:rgb(252, 177, 26);
+  }
+  svg:hover{
+    fill:rgb(0, 124, 130);
+  }
+
+.favicon{
+    width: 175px;
+    margin: 5%;
+}
+
+/* footer title */
+.ftitle{
+    /* padding-top:30px; */
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(0, 124, 130);
+}
+
+
+
+.footer{
+    grid-area:f;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "l r"
+}
+
+.rightfooter{
+    grid-area: r;
+}
+ 
+/* step three - build a grid that becomes active when the pixels are 800px or less */
+@media screen and (max-width: 800px) {
+
+    .container{
+        display: grid;
+        grid-gap: 15px;
+        /* grid is only one column, keep this way */
+        grid-template-columns: 1fr;
+        /* you can enter values, or auto will adjust the box sizes based on content */
+        grid-template-rows: auto;
+        grid-template-areas:
+        "n"
+        "h"
+        "e"
+        "s"
+        "w"
+        "f";
+    }
+}
+
+/* step 1 - assign each of your sections a letter */
+blockquote {
+    grid-area: q;
+    font-weight:300;
+    padding-bottom:30px;
+}
+
+header {
+    grid-area: h;
+    padding-top: 4px;
+    font-size: large;
+}
+
+nav{
+    grid-area:n;
+}
+
+.education {
+    grid-area: e;
+}
+
+.skills {
+    grid-area: s;
+}
+
+.work{
+    grid-area: w;
+}
+
+.footer{
+    grid-area:f;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "l r"
+}
+
+.rightfooter{
+    grid-area: r;
+}
+.favicon{
+    grid-area: l;
+}
+
+
+.button {
+    background:rgb(252, 177, 26);
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 0.25em;
+    padding: 10px;
+    line-height: 1;
+    box-shadow: 0 0 0.25em rgba(0,0,0,0.5);
+    text-shadow: 0 0 0.25em rgba(0,0,0,0.5);
+    font-size: 1.5rem;
+    margin-top: 10px;
+    position: absolute;
+  }
+
+  img{margin-top:40px;}
